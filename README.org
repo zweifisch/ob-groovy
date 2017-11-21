@@ -1,0 +1,34 @@
+* ob-groovy
+
+** supported header arguments
+
+- session
+
+** examples
+
+*** without session
+
+: #+BEGIN_SRC groovy
+: def dict = [:]
+: dict.key = 'value'
+: println dict
+: #+END_SRC
+: 
+: #+RESULTS:
+: : [key:value]
+
+*** with session, last expression is printed
+
+: #+BEGIN_SRC groovy :session
+: (head, tail) = 'head,tail'.split(',')
+: #+END_SRC
+: 
+: #+RESULTS:
+: : [head, tail]
+
+: #+BEGIN_SRC groovy :session
+: tail
+: #+END_SRC
+: 
+: #+RESULTS:
+: : tail
